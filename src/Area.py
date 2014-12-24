@@ -38,3 +38,21 @@ class Area(object):
     self._owner = None
     self._ID = 0
     self._name = "DELETED"
+
+  def getPeople(self):
+    return self._people
+
+  def getResources(self):
+    return self._resources
+
+  def getConnections(self):
+    return self._connections
+
+  def getOwner(self):
+    return self._owner
+
+  def getID(self):
+    return self._ID
+
+  def getName(self):
+    return self._name
