@@ -45,3 +45,31 @@ class Person(object):
 
   def getAlive(self):
     return self._alive
+
+  # Needs are not going to be done like this forever, this is VERY placeholder
+  def changeClan(self, clan):
+    if type(clan) is Clan:
+      self._clan = clan
+
+  def addNeed(self, need):
+    self._needs.add(need)
+
+  def removeNeed(self, need):
+    self._needs.remove(need)
+
+  def addEnergy(self, energy):
+    try:
+      energy = int(energy)
+      if energy < 0: raise Exception
+    except: print "\n\n" + str(traceback.format_exc()); return
+    self._energy = self._energy + energy
+
+  def takeEnergy(self, energy):
+    try:
+      energy = int(energy)
+      if energy < 0: raise Exception
+      if self._energy - energy < 0: raise Exception
+    except: print "\n\n" + str(traceback.format_exc()); return False
+    
+    self._energy = self._energy - energy
+    return True
