@@ -60,16 +60,39 @@ class Person(object):
   def addEnergy(self, energy):
     try:
       energy = int(energy)
-      if energy < 0: raise Exception
-    except: print "\n\n" + str(traceback.format_exc()); return
+      if energy < 0: raise Exception("Energy added cannot be less than 0.")
+    except: print "\n\n" + str(traceback.format_exc()); return False
     self._energy = self._energy + energy
 
   def takeEnergy(self, energy):
     try:
       energy = int(energy)
-      if energy < 0: raise Exception
-      if self._energy - energy < 0: raise Exception
+      if energy < 0: raise Exception("Energy taken cannot be less than 0.")
+      if self._energy - energy < 0: raise Exception("Not enough energy!")
     except: print "\n\n" + str(traceback.format_exc()); return False
     
     self._energy = self._energy - energy
+    return True
+
+  def addHealth(self, health):
+    try:
+      health = int(health)
+      if health < 0: raise Exception("Health added cannot be less than 0.")
+    except: print "\n\n" + str(traceback.format_exc()); return False
+
+    self._health = self._health + health
+    return True
+
+  def removeHealth(self, health):
+    try:
+      health = int(health)
+      if health < 0: raise Exception("Health taken cannot be less than 0.")
+    except: print "\n\n" + str(traceback.format_exc()); return False
+
+    self._health = self._health - health
+    
+    if self._health < 0:  # If the Person died from this damage
+      self.health = 0
+      self._alive = False
+
     return True
