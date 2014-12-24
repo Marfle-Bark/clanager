@@ -3,8 +3,8 @@
 # File creation: 2014-12-23
 
 import traceback
-from Clan import Clan
-from Resource import Resource
+from Clan import *
+from Resource import *
 
 class Person(object):
 
