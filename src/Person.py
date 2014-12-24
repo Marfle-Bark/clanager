@@ -27,3 +27,21 @@ class Person(object):
     self._energy = 0
     self._health = 0
     self._alive = False
+
+  def getName(self):
+    return self._name
+
+  def getClan(self):
+    return self._clan
+
+  def getNeeds(self):
+    return self._needs.items()
+
+  def getEnergy(self):
+    return self._energy
+
+  def getHealth(self):
+    return self._health
+
+  def getAlive(self):
+    return self._alive
