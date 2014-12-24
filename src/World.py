@@ -29,3 +29,6 @@ class World(object):
       self._areas.remove(area)
       return True
     return False
+
+  def advance(self):
+    pass  # This is where the magic is going to happen... Eventually
