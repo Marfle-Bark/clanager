@@ -12,7 +12,7 @@ class Resource(object):
       self._amount = int(amount)
     except:
       print "\n\n" + str(traceback.format_exc())
-      print "\n\nDATA VALIDATION ERROR"
+      print "\n\nDATA VALIDATION ERROR: Resource not created!"
       return
 
   def __del__(self):
