@@ -4,6 +4,7 @@
 
 import traceback
 
+
 class Resource(object):
 
   def __init__(self, kind, amount):
