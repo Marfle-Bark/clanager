@@ -15,8 +15,12 @@ class World(object):
   def __del__(self):
     self._areas = set()
 
+  ### Accessor Methods
+
   def getAreas(self):
     return self._areas
+
+  ### Mutator Methods
 
   def addArea(self, area):
     if type(area) is Area:
@@ -29,6 +33,8 @@ class World(object):
       self._areas.remove(area)
       return True
     return False
+
+  ### Functional Methods
 
   def advance(self):
     pass  # This is where the magic is going to happen... Eventually

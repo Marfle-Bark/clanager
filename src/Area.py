@@ -39,6 +39,8 @@ class Area(object):
     self._ID = 0
     self._name = "DELETED"
 
+  ### Accessor Methods
+
   def getPeople(self):
     return self._people
 
@@ -56,3 +58,7 @@ class Area(object):
 
   def getName(self):
     return self._name
+
+  ### Mutator Methods
+
+  

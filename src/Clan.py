@@ -22,11 +22,15 @@ class Clan(object):
     self._name = "DELETED"
     self._members = set()
 
+  ### Accessor Methods
+
   def getName(self):
     return self._name
 
   def getMembers(self):
     return self._members
+
+  ### Mutator Methods
 
   def addMember(self, newguy):
     if type(newguy) is Person:

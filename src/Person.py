@@ -30,6 +30,8 @@ class Person(object):
     self._health = 0
     self._alive = False
 
+  ### Accessor Methods
+
   def getName(self):
     return self._name
 
@@ -47,6 +49,8 @@ class Person(object):
 
   def isAlive(self):
     return self._alive
+
+  ### Mutator Methods
 
   # Needs are not going to be done like this forever, this is VERY placeholder
   def changeClan(self, clan):
