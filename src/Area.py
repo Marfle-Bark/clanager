@@ -112,3 +112,8 @@ class Area(object):
 
   def removeOwner(self):
     self._owner = None
+
+  def changeName(self, name):
+    try: name = str(name); self._name = name
+    except: print "\n\n" + str(traceback.format_exc()); return False
+    return True
