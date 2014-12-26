@@ -61,4 +61,18 @@ class Area(object):
 
   ### Mutator Methods
 
-  
+  def addPeople(self, *people):
+    for person in people:
+      if type(person) is Person:
+        self._people.add(person)
+      else:
+        return False
+    return True
+
+  def removePeople(self, *people):
+    for person in people:
+      if type(person) is Person:
+        self._people.remove(person)
+      else:
+        return False
+    return True
