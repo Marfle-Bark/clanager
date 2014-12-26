@@ -10,6 +10,7 @@ from Area import *
 class World(object):
 
   def __init__(self):
+    super(World, self).__init__()
     self._areas = set()
 
   def __del__(self):
@@ -38,4 +39,3 @@ class World(object):
 
   def advance(self):
     pass  # This is where the magic is going to happen... Eventually
-    

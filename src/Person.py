@@ -11,6 +11,7 @@ from Resource import *
 class Person(object):
 
   def __init__(self, name):
+    super(Person, self).__init__()
     try:
       self._name = str(name)  # Name of Person
       self._clan = None       # Clan Person belongs to
@@ -102,4 +103,3 @@ class Person(object):
       self._alive = False
 
     return True
-    

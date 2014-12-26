@@ -10,6 +10,7 @@ from Person import *
 class Clan(object):
 
   def __init__(self, name):
+    super(Clan, self).__init__()
     try:
       self._name = str(name)
       self._members = set()

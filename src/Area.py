@@ -8,12 +8,12 @@ from Clan import *
 from Person import *
 from Resource import *
 
-
 class Area(object):
 
   ID = 1
 
   def __init__(self, name = None):
+    super(Area, self).__init__()
     self._people = {}
     self._resources = []
     self._connections = {}

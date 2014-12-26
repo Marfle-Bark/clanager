@@ -8,6 +8,7 @@ import traceback
 class Resource(object):
 
   def __init__(self, kind, amount):
+    super(Resource, self).__init__()
     try:
       self._kind = str(kind)
       self._amount = int(amount)
@@ -41,4 +42,3 @@ class Resource(object):
 
     self._amount = self._amount - harvestAmount
     return (self._kind, amount)
-    
