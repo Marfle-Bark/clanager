@@ -7,11 +7,15 @@ import traceback
 
 class Resource(object):
 
-  def __init__(self, kind, amount):
+  def __init__(self, kind, maximum, amount, delta):
     super(Resource, self).__init__()
     try:
       self._kind = str(kind)
-      self._amount = int(amount)
+      self._max = int(maximum)
+      if self._max < 0: raise Exception("Max must be >= 0!")
+      self._amount = min(int(amount), self._max)
+      if self._amount < 0: raise Exception("Amount must be >= 0!")
+      self._delta = int(delta)
     except:
       print "\n\n" + str(traceback.format_exc())
       print "\n\nDATA VALIDATION ERROR: Resource not created!"
@@ -19,7 +23,9 @@ class Resource(object):
 
   def __del__(self):
     self._kind = "DELETED"
+    self._max = 0
     self._amount = 0
+    self._delta = 0
 
   def _calculateHarvestAmount(self):
     return min(self._amount, 5)
@@ -29,8 +35,14 @@ class Resource(object):
   def getKind(self):
     return self._kind
 
+  def getMax(self):
+    return self._max
+
   def getAmount(self):
     return self._amount
+
+  def getDelta(self):
+    return self._delta
 
   ### Mutator Methods
 
