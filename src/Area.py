@@ -117,3 +117,6 @@ class Area(object):
     try: name = str(name); self._name = name
     except: print "\n\n" + str(traceback.format_exc()); return False
     return True
+
+  ### Simulation Methods
+  

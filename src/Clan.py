@@ -46,3 +46,6 @@ class Clan(object):
         self._members.remove(oldguy)
       else: return False
     return True
+
+  ### Simulation Methods
+  

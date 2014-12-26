@@ -51,6 +51,15 @@ class Resource(object):
 
   ### Mutator Methods
 
+  def changeDelta(self, delta):
+    try:
+      delta = int(delta)
+      self._delta = delta
+    except:
+      print "\n\n" + str(traceback.format_exc())
+
+  ### Simulation Methods
+
   def harvest(self):
     if self._amount < 1:
       harvestAmount = 0
@@ -64,10 +73,3 @@ class Resource(object):
     if self._delta is not 0:
       self._amount = min(self._max, self._amount + self._delta)
       self._amount = max(self._amount, 0)
-
-  def changeDelta(self, delta):
-    try:
-      delta = int(delta)
-      self._delta = delta
-    except:
-      print "\n\n" + str(traceback.format_exc())

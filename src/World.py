@@ -35,7 +35,7 @@ class World(object):
       return True
     return False
 
-  ### Functional Methods
+  ### Simulation Methods
 
   def advance(self):
     pass  # This is where the magic is going to happen... Eventually
