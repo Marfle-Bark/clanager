@@ -64,3 +64,10 @@ class Resource(object):
     if self._delta is not 0:
       self._amount = min(self._max, self._amount + self._delta)
       self._amount = max(self._amount, 0)
+
+  def changeDelta(self, delta):
+    try:
+      delta = int(delta)
+      self._delta = delta
+    except:
+      print "\n\n" + str(traceback.format_exc())
