@@ -59,3 +59,8 @@ class Resource(object):
 
     self._amount = self._amount - harvestAmount
     return (self._kind, amount)
+
+  def executeDelta(self):
+    if self._delta is not 0:
+      self._amount = min(self._max, self._amount + self._delta)
+      self._amount = max(self._amount, 0)
