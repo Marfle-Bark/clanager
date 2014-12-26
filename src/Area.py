@@ -102,3 +102,13 @@ class Area(object):
         self._connections.remove(connection)
       else: return False
     return True
+
+  def setOwner(self, claimant):
+    if type(claimant) is Clan:
+      if self._owner is None:
+        self._owner = claimant
+        return True
+    return False
+
+  def removeOwner(self):
+    self._owner = None
