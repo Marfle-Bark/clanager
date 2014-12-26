@@ -65,14 +65,26 @@ class Area(object):
     for person in people:
       if type(person) is Person:
         self._people.add(person)
-      else:
-        return False
+      else: return False
     return True
 
   def removePeople(self, *people):
     for person in people:
       if type(person) is Person:
         self._people.remove(person)
-      else:
-        return False
+      else: return False
+    return True
+
+  def addResources(self, *resources):
+    for resource in resources:
+      if type(resource) is Resource:
+        self._resources.add(resource)
+      else: return False
+    return True
+
+  def removeResources(self, *resources):
+    for resource in resources:
+      if type(resource) is Resource:
+        self._resources.remove(resource)
+      else: return False
     return True
