@@ -102,3 +102,4 @@ class Person(object):
       self._alive = False
 
     return True
+    

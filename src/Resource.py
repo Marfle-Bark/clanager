@@ -41,3 +41,4 @@ class Resource(object):
 
     self._amount = self._amount - harvestAmount
     return (self._kind, amount)
+    

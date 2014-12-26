@@ -32,14 +32,16 @@ class Clan(object):
 
   ### Mutator Methods
 
-  def addMember(self, newguy):
-    if type(newguy) is Person:
-      self._members.add(newguy)
-      return True
-    return False
+  def addMembers(self, *people):
+    for newguy in people:
+      if type(newguy) is Person:
+        self._members.add(newguy)
+      else: return False
+    return True
 
-  def removeMember(self, oldguy):
-    if type(oldguy) is Person:
-      self._members.remove(oldguy)
-      return True
-    return False
+  def removeMembers(self, *people):
+    for oldguy in people:
+      if type(oldguy) is Person:
+        self._members.remove(oldguy)
+      else: return False
+    return True
