@@ -10,11 +10,10 @@ class Resource(object):
   def __init__(self, kind, maximum, amount, delta):
     super(Resource, self).__init__()
     try:
+      self._validateInit(maximum, amount)
       self._kind = str(kind)
       self._max = int(maximum)
-      if self._max < 0: raise Exception("Max must be >= 0!")
       self._amount = min(int(amount), self._max)
-      if self._amount < 0: raise Exception("Amount must be >= 0!")
       self._delta = int(delta)
     except:
       print "\n\n" + str(traceback.format_exc())
@@ -29,6 +28,12 @@ class Resource(object):
 
   def _calculateHarvestAmount(self):
     return min(self._amount, 5)
+
+  ### Validation Methods
+
+  def _validateInit(self, maximum, amount):
+    if maximum < 0: raise Exception("Max must be >= 0!")
+    if amount < 0: raise Exception("Amount must be >= 0!")
 
   ### Accessor Methods
 
