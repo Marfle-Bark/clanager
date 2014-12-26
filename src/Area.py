@@ -6,7 +6,7 @@ import traceback
 
 from Clan import *
 from Person import *
-from Resrouce import *
+from Resource import *
 
 
 class Area(object):
@@ -86,5 +86,19 @@ class Area(object):
     for resource in resources:
       if type(resource) is Resource:
         self._resources.remove(resource)
+      else: return False
+    return True
+
+  def addConnections(self, *connections):
+    for connection in connections:
+      if type(connection) is Area:
+        self._connections.add(connection)
+      else: return False
+    return True
+
+  def removeConnections(self, *connections):
+    for connection in connections:
+      if type(connection) is Area:
+        self._connections.remove(connection)
       else: return False
     return True
