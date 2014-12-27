@@ -37,6 +37,6 @@ class World(object):
 
   ### Simulation Methods
 
-  def advance(self):
+  def iterateSimulation(self):
     for area in self._areas:
       area.iterateSimulation()

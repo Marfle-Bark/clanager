@@ -105,3 +105,6 @@ class Person(object):
     return True
 
   ### Simulation Methods
+
+  def iterateSimulation(self):
+    pass

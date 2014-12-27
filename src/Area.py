@@ -123,3 +123,5 @@ class Area(object):
   def iterateSimulation(self):
     for resource in self._resources:
       resource.iterateSimulation()
+    for person in self._people:
+      person.iterateSimulation()
