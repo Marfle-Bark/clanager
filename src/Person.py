@@ -17,6 +17,7 @@ class Person(object):
       self._clan = None       # Clan Person belongs to
       self._needs = []        # Person's needs (begins empty)
       self._energy = 100      # Person's energy (low = hungry)
+      self._water = 100       # Person's hydration (low = thirsty)
       self._health = 100      # Person's health (low = dying)
       self._alive = True      # Whether Person is alive or not
     except:
@@ -28,6 +29,7 @@ class Person(object):
     self._clan = None
     self._needs = []
     self._energy = 0
+    self._water = 0
     self._health = 0
     self._alive = False
 
@@ -107,4 +109,5 @@ class Person(object):
   ### Simulation Methods
 
   def iterateSimulation(self):
-    pass
+    self._energy = self._energy - 1
+    self._water = self._water - 1
