@@ -13,7 +13,7 @@ class Clan(object):
     super(Clan, self).__init__()
     try:
       self._name = str(name)
-      self._members = set()
+      self._members = []
     except:
       print "\n\n" + str(traceback.format_exc())
       print "\n\nDATA VALIDATION ERROR: Clan not created!"
@@ -21,7 +21,7 @@ class Clan(object):
 
   def __del__(self):
     self._name = "DELETED"
-    self._members = set()
+    self._members = []
 
   ### Accessor Methods
 
@@ -36,7 +36,7 @@ class Clan(object):
   def addMembers(self, *people):
     for newguy in people:
       if type(newguy) is Person:
-        self._members.add(newguy)
+        self._members.append(newguy)
       else: return False
     return True
 
@@ -48,4 +48,3 @@ class Clan(object):
     return True
 
   ### Simulation Methods
-  

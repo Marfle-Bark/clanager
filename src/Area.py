@@ -14,13 +14,13 @@ class Area(object):
 
   def __init__(self, name = None):
     super(Area, self).__init__()
-    self._people = {}
+    self._people = []
     self._resources = []
-    self._connections = {}
+    self._connections = []
     self._owner = None
 
-    self._ID = ID
-    ID = ID + 1
+    self._ID = self.ID
+    self.ID = self.ID + 1
 
     if name is not None:
       try:
@@ -32,9 +32,9 @@ class Area(object):
         return
 
   def __del__(self):
-    self._people = {}
+    self._people = []
     self._resources = []
-    self._connections = {}
+    self._connections = []
     self._owner = None
     self._ID = 0
     self._name = "DELETED"
@@ -64,7 +64,7 @@ class Area(object):
   def addPeople(self, *people):
     for person in people:
       if type(person) is Person:
-        self._people.add(person)
+        self._people.append(person)
       else: return False
     return True
 
@@ -78,7 +78,7 @@ class Area(object):
   def addResources(self, *resources):
     for resource in resources:
       if type(resource) is Resource:
-        self._resources.add(resource)
+        self._resources.append(resource)
       else: return False
     return True
 
@@ -92,7 +92,7 @@ class Area(object):
   def addConnections(self, *connections):
     for connection in connections:
       if type(connection) is Area:
-        self._connections.add(connection)
+        self._connections.append(connection)
       else: return False
     return True
 
@@ -119,4 +119,7 @@ class Area(object):
     return True
 
   ### Simulation Methods
-  
+
+  def iterateSimulation(self):
+    for resource in self._resources:
+      resource.executeDelta()

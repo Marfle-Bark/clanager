@@ -11,10 +11,10 @@ class World(object):
 
   def __init__(self):
     super(World, self).__init__()
-    self._areas = set()
+    self._areas = []
 
   def __del__(self):
-    self._areas = set()
+    self._areas = []
 
   ### Accessor Methods
 
@@ -25,7 +25,7 @@ class World(object):
 
   def addArea(self, area):
     if type(area) is Area:
-      self._areas.add(area)
+      self._areas.append(area)
       return True
     return False
 
@@ -38,4 +38,5 @@ class World(object):
   ### Simulation Methods
 
   def advance(self):
-    pass  # This is where the magic is going to happen... Eventually
+    for area in self._areas:
+      area.iterateSimulation()
