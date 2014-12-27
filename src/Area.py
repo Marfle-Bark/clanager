@@ -122,4 +122,4 @@ class Area(object):
 
   def iterateSimulation(self):
     for resource in self._resources:
-      resource.executeDelta()
+      resource.iterateSimulation()
